@@ -14,6 +14,12 @@ A powerful full-stack application that lets users **search website content** sem
 
 ---
 
+Images(Screenshot):
+<img width="1919" height="832" alt="image" src="https://github.com/user-attachments/assets/738ebd35-4a01-4e05-b46c-e7025eb565e9" /><img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/f1e0cc40-ed38-4662-b63f-5b58f3a93ddd" />
+<img width="1919" height="962" alt="image" src="https://github.com/user-attachments/assets/203d993e-9399-477f-a2aa-1d6aa9bd617d" />
+
+
+
 ## 🧱 Tech Stack
 
 | Layer     | Technology               |
@@ -98,10 +104,12 @@ npm install
 
 npm run dev
 
-4.Open in browser: http://localhost:3000
+4.Open in browser: 
+http://localhost:3000
 
 
 🔍 How It Works
+
 1.User enters a website URL and a query.
 
 2.Backend fetches and parses the website using BeautifulSoup.
