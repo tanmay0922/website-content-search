@@ -1,125 +1,50 @@
-# 🌐 Website Content Search Tool
+# Website Content Search
 
-A powerful full-stack application that lets users **search website content** semantically. Enter a URL, extract content intelligently, chunk and embed it, then perform semantic search using Sentence Transformers – all in one seamless UI.
+A semantic search engine for web content — submit any URL and a query to find the most relevant sections of that page using NLP embeddings and cosine similarity.
 
----
+## Features
 
-## 🚀 Features
+- **Web Extraction** — fetches and parses any URL using BeautifulSoup
+- **Smart Chunking** — splits content into 500-token segments for precise matching
+- **Semantic Search** — generates embeddings via SentenceTransformers, ranks by cosine similarity
+- **Full-stack** — Next.js frontend with TailwindCSS, FastAPI Python backend
+- **Contextual Results** — returns ranked snippets with surrounding context
 
-- 🔗 Extracts content from a webpage using `BeautifulSoup`
-- 📄 Splits content into 500-token chunks for efficient search
-- 🧠 Embeds content using `SentenceTransformers`
-- 🔍 Performs semantic similarity search for user queries
-- 🧰 Built with **FastAPI** (Backend) & **Next.js + TailwindCSS** (Frontend)
+## Tech Stack
 
----
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js + TailwindCSS |
+| Backend | FastAPI (Python) |
+| NLP | SentenceTransformers |
+| Parsing | BeautifulSoup + Requests |
+| Language | JavaScript (48%) + Python (47%) |
 
-Images(Screenshot):
-<img width="1919" height="832" alt="image" src="https://github.com/user-attachments/assets/738ebd35-4a01-4e05-b46c-e7025eb565e9" /><img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/f1e0cc40-ed38-4662-b63f-5b58f3a93ddd" />
-<img width="1919" height="962" alt="image" src="https://github.com/user-attachments/assets/203d993e-9399-477f-a2aa-1d6aa9bd617d" />
+## Getting Started
 
+```bash
+git clone https://github.com/tanmay0922/website-content-search.git
+cd website-content-search
 
-
-## 🧱 Tech Stack
-
-| Layer     | Technology               |
-|-----------|--------------------------|
-| Frontend  | Next.js, TailwindCSS     |
-| Backend   | FastAPI, Python          |
-| NLP       | SentenceTransformers     |
-| Parsing   | BeautifulSoup, Requests  |
-| State     | React Hooks              |
-
----
-
-## 📁 Project Structure
-
-website-content-search/
-│
-├── backend/ # FastAPI backend
-
-│ ├── main.py # API endpoints
-
-│ ├── chunker.py # Tokenizer + chunk logic
-
-│ ├── parser.py # HTML parsing
-
-│ ├── vector_db.py # In-memory embedding + search
-
-│ └── requirements.txt # Python dependencies
-
-│
-├── frontend/ # Next.js frontend
-
-│ ├── app/ # Components, pages
-
-│ ├── public/ # Icons and static files
-
-│ ├── tailwind.config.js
-
-│ ├── postcss.config.js
-
-│ ├── package.json
-
-│ └── next.config.mjs
-
-│
-├── .gitignore
-└── README.md
-
-
----
-
-## ⚙️ Setup Instructions
-
-### 🐍 Backend (FastAPI)
-
-1. Navigate to backend folder:
-2. 
-   cd backend
-   
-2.Create virtual environment:
-
-python -m venv venv
-
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-3.Install dependencies:
-
+# Backend
+cd backend
 pip install -r requirements.txt
-
-4.Start FastAPI server:
-
 uvicorn main:app --reload
-🌐 Frontend (Next.js)
 
-1.Navigate to frontend folder:
+# Frontend (new terminal)
 cd frontend
-
-2.Install dependencies:
-
 npm install
-
-3.Run the development server:
-
 npm run dev
+```
 
-4.Open in browser: 
-http://localhost:3000
+## How It Works
 
+```
+URL Input → Fetch Page → Parse HTML → Chunk Text (500 tokens)
+                                              ↓
+Query Input → Embed Query → Compare vs Chunk Embeddings → Rank by Cosine Similarity → Return Top Results
+```
 
-🔍 How It Works
+## Author
 
-1.User enters a website URL and a query.
-
-2.Backend fetches and parses the website using BeautifulSoup.
-
-3.Text is split into meaningful 500-token chunks.
-
-4.Chunks are embedded using a transformer model.
-
-5.Query is embedded and matched against chunks using cosine similarity.
-
-6.Results are ranked and displayed with context.
-
-
+**Tanmay Upadhyay** — [GitHub](https://github.com/tanmay0922) · [LinkedIn](https://www.linkedin.com/in/tanmay-upadhyay-0b884b203/) · [Portfolio](https://tanmay0922.github.io)
